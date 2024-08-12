@@ -25,8 +25,9 @@ namespace WelcomeMessage
 
         private void OnPlayerVerified(VerifiedEventArgs ev)
         {
+            string playerName = ev.Player.Nickname;
             ev.Player.Broadcast(Config.MessageDuration, (Config.Broadcast));
-            Log.Debug($"Messaggio di benvenuto inviato a {ev.Player.Nickname}: {Config.Broadcast}");
+            Log.Debug($"Messaggio di benvenuto inviato a {playerName}: {Config.Broadcast}");
         }
     }
 }
